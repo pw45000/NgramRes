@@ -52,7 +52,7 @@ def main(args):
         tokenizer = lambda x: x
     data = []
     sizes = []
-    with open(args.arpa) as fin:
+    with open(args.arpa, encoding = 'utf-8') as fin:
         line = fin.readline().strip()
         assert line == "\data\\", "Error format"
         while True:
