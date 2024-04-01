@@ -52,9 +52,7 @@ def replace_special_tokens(ws, eos_token, unk_token):
 
 def save(data, sidx):
     logger.info(f"Saving the {sidx}-gram...")
-    file_path = f"{sidx}gram.json"
-    data_np = numpy.array(data, dtype="object")
-    np.save(file=f"{sidx}gram.npy", arr = data_np, allow_pickle = True)
+    torch.save(data, f=f"{sidx}gram.pt")
     logger.info(f"{sidx}-gram saved. ")
 
 # VERY DANGEROUS! Taken from https://stackoverflow.com/questions/12417498/how-to-release-used-memory-immediately-in-python-list.
