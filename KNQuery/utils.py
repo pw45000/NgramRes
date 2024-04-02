@@ -163,7 +163,6 @@ class Dictionary:
 
 
 def load_tokenizer(tokenizer_path):
-
     if tokenizer_path.endswith("json"):
         from tokenizers import Tokenizer
         inner_tokenizer = Tokenizer.from_file(tokenizer_path)
